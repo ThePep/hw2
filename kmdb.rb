@@ -70,12 +70,56 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+puts "Test"
+
+Film.destroy_all
+Cast.destroy_all
+
 # Generate models and tables, according to the domain model
-# TODO!
+
+rails generate model Film
+rails generate model Cast
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
+
+#films 
+
+new_film = Film.new
+new_film.title = "Batman Begins"
+new_film.year = "2005"
+new_film.rating = "PG-13"
+new_film.director = "Christopher Nolan"
+new_film.save
+
+new_film = Film.new
+new_film.title = "The Dark Knight"
+new_film.year = "2008"
+new_film.rating = "PG-13"
+new_film.director = "Christopher Nolan"
+new_film.save
+
+new_film = Film.new
+new_film.title = "The Dark Knight Rises"
+new_film.year = "2012"
+new_film.rating = "PG-13"
+new_film.director = "Christopher Nolan"
+new_film.save
+
+#casts
+
+new_cast = Cast.new
+new_cast.title = "Batman Begins"
+new_cast.actor = "Christian Bale"
+new_cast.character = "Bruce Wayne"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "Batman Begins"
+new_cast.actor = "Michael Caine"
+new_cast.character = "Alfred"
+new_cast.save
 
 # Prints a header for the movies output
 puts "Movies"
