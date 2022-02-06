@@ -70,8 +70,6 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-puts "Test"
-
 Film.destroy_all
 Cast.destroy_all
 
@@ -196,6 +194,8 @@ new_cast.title = "The Dark Knight Rises"
 new_cast.actor = "Anne Hathaway"
 new_cast.character = "Selina Kyle"
 new_cast.save
+
+
 
 # Prints a header for the movies output
 puts "Movies"
