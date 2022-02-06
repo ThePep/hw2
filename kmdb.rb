@@ -77,8 +77,6 @@ Cast.destroy_all
 
 # Generate models and tables, according to the domain model
 
-rails generate model Film
-rails generate model Cast
 
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
@@ -129,11 +127,7 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-for film in Films
-    puts "#{film.title} #{film.year} #{film.rating} #{film.director"
-end
-
-
+puts Film.all
 
 # Prints a header for the cast output
 puts ""
@@ -144,7 +138,5 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
 
-for cast in Casts
-    puts "#{cast.title} #{film.actor} #{film.character}"
-end
+puts Cast.all
 
