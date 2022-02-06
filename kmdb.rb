@@ -119,6 +119,84 @@ new_cast.actor = "Michael Caine"
 new_cast.character = "Alfred"
 new_cast.save
 
+new_cast = Cast.new
+new_cast.title = "Batman Begins"
+new_cast.actor = "Liam Neeson"
+new_cast.character = "Ra's Al Ghul"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "Batman Begins"
+new_cast.actor = "Katie Holmes"
+new_cast.character = "Rachel Dawes"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "Batman Begins"
+new_cast.actor = "Gary Oldman"
+new_cast.character = "Commissioner Gordon"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight"
+new_cast.actor = "Christian Bale"
+new_cast.character = "Bruce Wayne"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight"
+new_cast.actor = "Heath Ledger"
+new_cast.character = "Joker"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight"
+new_cast.actor = "Aaron Eckhart"
+new_cast.character = "Harvey Dent"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight"
+new_cast.actor = "Michael Caine"
+new_cast.character = "Alfred"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight"
+new_cast.actor = "Maggie Gyllenhaal"
+new_cast.character = "Rachel Dawes"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight Rises"
+new_cast.actor = "Christian Bale"
+new_cast.character = "Bruce Wayne"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight Rises"
+new_cast.actor = "Gary Oldman"
+new_cast.character = "Commissioner Gordon"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight Rises"
+new_cast.actor = "Tom Hardy"
+new_cast.character = "Bane"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight Rises"
+new_cast.actor = "Joseph Gordon-Levitt"
+new_cast.character = "John Blake"
+new_cast.save
+
+new_cast = Cast.new
+new_cast.title = "The Dark Knight Rises"
+new_cast.actor = "Anne Hathaway"
+new_cast.character = "Selina Kyle"
+new_cast.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
@@ -127,7 +205,12 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
-puts Film.all
+films = Film.all
+
+for film in films
+    puts "#{film.title} #{film.year} #{film.rating} #{film.director}"
+end
+
 
 # Prints a header for the cast output
 puts ""
@@ -138,5 +221,10 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
 
-puts Cast.all
+casts = Cast.all
+
+for cast in casts
+    puts "#{cast.title} #{cast.actor} #{cast.character}"
+end
+
 
