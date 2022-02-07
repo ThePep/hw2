@@ -72,6 +72,7 @@
 
 Film.destroy_all
 Cast.destroy_all
+Person.destroy_all
 
 # Generate models and tables, according to the domain model
 
@@ -79,121 +80,170 @@ Cast.destroy_all
 # Insert data into your database that reflects the sample data shown above
 # Do not use hard-coded foreign key IDs.
 
+#people
+
+person_cn = Person.new
+person_cn.name = "Christopher Nolan"
+person_cn.save
+
+person_cb = Person.new
+person_cb.name = "Christian Bale"
+person_cb.save
+
+person_mc = Person.new
+person_mc.name = "Michael Caine"
+person_mc.save
+
+person_ln = Person.new
+person_ln.name = "Liam Neeson"
+person_ln.save
+
+person_kh = Person.new
+person_kh.name = "Katie Holmes"
+person_kh.save
+
+person_go = Person.new
+person_go.name = "Gary Oldman"
+person_go.save
+
+person_hl = Person.new
+person_hl.name = "Heath Ledger"
+person_hl.save
+
+person_ae = Person.new
+person_ae.name = "Aaron Eckhart"
+person_ae.save
+
+person_mg = Person.new
+person_mg.name = "Maggie Gyllenhaal"
+person_mg.save
+
+person_th = Person.new
+person_th.name = "Tom Hardy"
+person_th.save
+
+person_jgl = Person.new
+person_jgl.name = "Joseph Gordon-Levitt"
+person_jgl.save
+
+person_ah = Person.new
+person_ah.name = "Anne Hathaway"
+person_ah.save
 
 #films 
 
-new_film = Film.new
-new_film.title = "Batman Begins"
-new_film.year = "2005"
-new_film.rating = "PG-13"
-new_film.director = "Christopher Nolan"
-new_film.save
+film_bb = Film.new
+film_bb.title = "Batman Begins"
+film_bb.year = "2005"
+film_bb.rating = "PG-13"
+film_bb.director_id = person_cn.id
+film_bb.save
 
-new_film = Film.new
-new_film.title = "The Dark Knight"
-new_film.year = "2008"
-new_film.rating = "PG-13"
-new_film.director = "Christopher Nolan"
-new_film.save
+film_tdk = Film.new
+film_tdk.title = "The Dark Knight"
+film_tdk.year = "2008"
+film_tdk.rating = "PG-13"
+film_tdk.director_id = person_cn.id
+film_tdk.save
 
-new_film = Film.new
-new_film.title = "The Dark Knight Rises"
-new_film.year = "2012"
-new_film.rating = "PG-13"
-new_film.director = "Christopher Nolan"
-new_film.save
+film_tdkr = Film.new
+film_tdkr.title = "The Dark Knight Rises"
+film_tdkr.year = "2012"
+film_tdkr.rating = "PG-13"
+film_tdkr.director_id = person_cn.id
+film_tdkr.save
 
 #casts
 
-new_cast = Cast.new
-new_cast.title = "Batman Begins"
-new_cast.actor = "Christian Bale"
-new_cast.character = "Bruce Wayne"
-new_cast.save
+cast_bw_bb = Cast.new
+cast_bw_bb.title = film_bb.id
+cast_bw_bb.actor_id = person_cb.id
+cast_bw_bb.character = "Bruce Wayne"
+cast_bw_bb.save
 
-new_cast = Cast.new
-new_cast.title = "Batman Begins"
-new_cast.actor = "Michael Caine"
-new_cast.character = "Alfred"
-new_cast.save
+cast_a_bb = Cast.new
+cast_a_bb.title = film_bb.id
+cast_a_bb.actor_id = person_mc.id
+cast_a_bb.character = "Alfred"
+cast_a_bb.save
 
-new_cast = Cast.new
-new_cast.title = "Batman Begins"
-new_cast.actor = "Liam Neeson"
-new_cast.character = "Ra's Al Ghul"
-new_cast.save
+cast_rag_bb = Cast.new
+cast_rag_bb.title = film_bb.id
+cast_rag_bb.actor_id = person_ln.id
+cast_rag_bb.character = "Ra's Al Ghul"
+cast_rag_bb.save
 
-new_cast = Cast.new
-new_cast.title = "Batman Begins"
-new_cast.actor = "Katie Holmes"
-new_cast.character = "Rachel Dawes"
-new_cast.save
+cast_rd_bb = Cast.new
+cast_rd_bb.title = film_bb.id
+cast_rd_bb.actor_id = person_kh.id
+cast_rd_bb.character = "Rachel Dawes"
+cast_rd_bb.save
 
-new_cast = Cast.new
-new_cast.title = "Batman Begins"
-new_cast.actor = "Gary Oldman"
-new_cast.character = "Commissioner Gordon"
-new_cast.save
+cast_cg_bb = Cast.new
+cast_cg_bb.title = film_bb.id
+cast_cg_bb.actor_id = person_go.id
+cast_cg_bb.character = "Commissioner Gordon"
+cast_cg_bb.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight"
-new_cast.actor = "Christian Bale"
-new_cast.character = "Bruce Wayne"
-new_cast.save
+cast_bw_tdk = Cast.new
+cast_bw_tdk.title = film_tdk.id
+cast_bw_tdk.actor_id = person_cb.id
+cast_bw_tdk.character = "Bruce Wayne"
+cast_bw_tdk.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight"
-new_cast.actor = "Heath Ledger"
-new_cast.character = "Joker"
-new_cast.save
+cast_j_tdk = Cast.new
+cast_j_tdk.title = film_tdk.id
+cast_j_tdk.actor_id = person_hl.id
+cast_j_tdk.character = "Joker"
+cast_j_tdk.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight"
-new_cast.actor = "Aaron Eckhart"
-new_cast.character = "Harvey Dent"
-new_cast.save
+cast_hd_tdk = Cast.new
+cast_hd_tdk.title = film_tdk.id
+cast_hd_tdk.actor_id = person_ae.id
+cast_hd_tdk.character = "Harvey Dent"
+cast_hd_tdk.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight"
-new_cast.actor = "Michael Caine"
-new_cast.character = "Alfred"
-new_cast.save
+cast_a_tdk = Cast.new
+cast_a_tdk.title = film_tdk.id
+cast_a_tdk.actor_id = person_mc.id
+cast_a_tdk.character = "Alfred"
+cast_a_tdk.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight"
-new_cast.actor = "Maggie Gyllenhaal"
-new_cast.character = "Rachel Dawes"
-new_cast.save
+cast_rd_tdk = Cast.new
+cast_rd_tdk.title = film_tdk.id
+cast_rd_tdk.actor_id = person_mg.id
+cast_rd_tdk.character = "Rachel Dawes"
+cast_rd_tdk.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight Rises"
-new_cast.actor = "Christian Bale"
-new_cast.character = "Bruce Wayne"
-new_cast.save
+cast_bw_tdkr = Cast.new
+cast_bw_tdkr.title = film_tdkr.id
+cast_bw_tdkr.actor_id = person_cb.id
+cast_bw_tdkr.character = "Bruce Wayne"
+cast_bw_tdkr.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight Rises"
-new_cast.actor = "Gary Oldman"
-new_cast.character = "Commissioner Gordon"
-new_cast.save
+cast_cg_tdkr = Cast.new
+cast_cg_tdkr.title = film_tdkr.id
+cast_cg_tdkr.actor_id = person_go.id
+cast_cg_tdkr.character = "Commissioner Gordon"
+cast_cg_tdkr.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight Rises"
-new_cast.actor = "Tom Hardy"
-new_cast.character = "Bane"
-new_cast.save
+cast_th_tdkr = Cast.new
+cast_th_tdkr.title = film_tdkr.id
+cast_th_tdkr.actor_id = person_th.id
+cast_th_tdkr.character = "Bane"
+cast_th_tdkr.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight Rises"
-new_cast.actor = "Joseph Gordon-Levitt"
-new_cast.character = "John Blake"
-new_cast.save
+cast_jb_tdkr = Cast.new
+cast_jb_tdkr.title = film_tdkr.id
+cast_jb_tdkr.actor_id = person_jgl.id
+cast_jb_tdkr.character = "John Blake"
+cast_jb_tdkr.save
 
-new_cast = Cast.new
-new_cast.title = "The Dark Knight Rises"
-new_cast.actor = "Anne Hathaway"
-new_cast.character = "Selina Kyle"
-new_cast.save
+cast_sk_tdkr = Cast.new
+cast_sk_tdkr.title = film_tdkr.id
+cast_sk_tdkr.actor_id = person_ah.id
+cast_sk_tdkr.character = "Selina Kyle"
+cast_sk_tdkr.save
 
 
 
@@ -208,7 +258,8 @@ puts ""
 films = Film.all
 
 for film in films
-    puts "#{film.title} #{film.year} #{film.rating} #{film.director}"
+    director = Person.where({id: film.director_id})[0]
+    puts "#{film.title} #{film.year} #{film.rating} #{director.name}"
 end
 
 
@@ -224,7 +275,9 @@ puts ""
 casts = Cast.all
 
 for cast in casts
-    puts "#{cast.title} #{cast.actor} #{cast.character}"
+    film = Film.where({id: film.title})[0]
+    actor = Person.where({id: person.actor_id})[0]
+    puts "#{film.title} #{actor.name} #{cast.character}"
 end
 
 

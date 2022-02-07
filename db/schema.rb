@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_06_182447) do
+ActiveRecord::Schema.define(version: 2022_02_07_224514) do
 
   create_table "casts", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "title"
-    t.string "actor"
+    t.string "actor_id"
     t.string "character"
   end
 
@@ -26,7 +26,13 @@ ActiveRecord::Schema.define(version: 2022_02_06_182447) do
     t.string "title"
     t.integer "year"
     t.string "rating"
-    t.string "director"
+    t.string "director_id"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
   end
 
 end

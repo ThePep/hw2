@@ -4,7 +4,7 @@ class CreateCasts < ActiveRecord::Migration[7.0]
 
       t.timestamps
       t.string :title
-      t.string :actor
+      t.string :actor_id
       t.string :character
     end
   end

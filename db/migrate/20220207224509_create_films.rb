@@ -6,7 +6,8 @@ class CreateFilms < ActiveRecord::Migration[7.0]
       t.string :title
       t.integer :year
       t.string :rating
-      t.string :director
+      t.string :director_id
+
     end
   end
 end
