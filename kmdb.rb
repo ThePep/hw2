@@ -275,9 +275,9 @@ puts ""
 casts = Cast.all
 
 for cast in casts
-    film = Film.where({id: film.title})[0]
-    actor = Person.where({id: person.actor_id})[0]
-    puts "#{film.title} #{actor.name} #{cast.character}"
+    film_name = Film.where({id: cast.title})[0]
+    actor = Person.where({id: cast.actor_id})[0]
+    puts "#{film_name.title} #{actor.name} #{cast.character}"
 end
 
 
